@@ -17,114 +17,114 @@ import com.datamorpher.model.SimplePropertyWithAttribs;
 
 public class XmlHandler extends DefaultHandler {
 
-	private static final Logger logger = LoggerFactory.getLogger(XmlHandler.class);
+   private static final Logger logger = LoggerFactory.getLogger(XmlHandler.class);
 
-	private Stack<String> stack = new Stack<String>();
+   private Stack<String> complexTypes = new Stack<String>();
 
-	private Stack<String> complexTypes = new Stack<String>();
+   private Property<?> currentProperty = null;
 
-	private Stack<Property<?>> references = new Stack<Property<?>>();
+   private String currentTagValue;
 
-	private String currentTagValue;
+   private List<Property<?>> prevAttributes = null;
 
-	private Property<?> currentProperty = null;
+   private Stack<Property<?>> references = new Stack<Property<?>>();
 
-	private List<Property<?>> prevAttributes = null;
+   private Stack<String> stack = new Stack<String>();
 
-	@Override
-	public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+   @Override
+   public void characters(char[] ch, int start, int length) throws SAXException {
+      this.currentTagValue = new String(ch, start, length).trim();
+   }
 
-		String valueFromStack = !stack.isEmpty()
-													? stack.peek()
-													: null;
+   @Override
+   public void endElement(String uri, String localName, String qName) throws SAXException {
+      String valueFromStack = !stack.isEmpty()
+            ? stack.peek()
+            : null;
 
-		if (valueFromStack == null) {
-			// This must be the root element.
-			stack.push(qName);
-		} else {
-			// Change in the level.
-			if (!qName.equals(valueFromStack)) {
-				Property<?> parent = null;
-				if (!references.isEmpty()) {
-					parent = references.peek();
-				}
-				this.currentProperty = new ComplexProperty(valueFromStack);
-				if (prevAttributes != null) {
-					((ComplexProperty) this.currentProperty).addProperties(prevAttributes);
-					prevAttributes = null;
-				}
-				references.push(currentProperty);
-				// Link the new complex type with the parent if any exists.
-				if (parent != null) {
-					((ComplexProperty) parent).addProperty(this.currentProperty);
-				}
-				// remove the current tag that is in temp. stack and push it to
-				// the complex types stack.
-				stack.pop();
-				complexTypes.push(valueFromStack);
+      if (qName.equals(valueFromStack)) {
+         SimpleProperty simpleProperty = null;
 
-				stack.push(qName);
-			}
-		}
+         if (prevAttributes != null) {
+            simpleProperty = new SimplePropertyWithAttribs(valueFromStack, this.currentTagValue);
 
-		if (attributes != null) {
-			int count = attributes.getLength();
-			if (count > 0) {
-				prevAttributes = new ArrayList<Property<?>>();
-				for (int i = 0; i < count; ++i) {
-					String attrName = attributes.getQName(i);
-					String attrValue = attributes.getValue(i);
-					prevAttributes.add(new SimpleProperty(attrName, attrValue));
-				}
-			}
-		}
-	}
+            ((SimplePropertyWithAttribs) simpleProperty).addAttributes(prevAttributes);
+            prevAttributes = null;
+         } else {
+            simpleProperty = new SimpleProperty(valueFromStack, this.currentTagValue);
+         }
 
-	@Override
-	public void endElement(String uri, String localName, String qName) throws SAXException {
-		String valueFromStack = !stack.isEmpty()
-													? stack.peek()
-													: null;
+         this.currentProperty = references.peek();
 
-		if (qName.equals(valueFromStack)) {
-			SimpleProperty simpleProperty = null;
+         // last one should be a simple property
+         if (this.currentProperty == null) {
+            this.currentProperty = simpleProperty;
+         } else if (this.currentProperty instanceof ComplexProperty) {
+            ((ComplexProperty) this.currentProperty).addProperty(simpleProperty);
+         }
+         stack.pop();
+      }
 
-			if (prevAttributes != null) {
-				simpleProperty = new SimplePropertyWithAttribs(valueFromStack, this.currentTagValue);
+      if (!complexTypes.isEmpty() && complexTypes.peek().equals(qName)) {
+         if (references.size() == 1) {
+            this.currentProperty = references.peek();
+         }
+         complexTypes.pop();
+         references.pop();
+      }
+   }
 
-				((SimplePropertyWithAttribs) simpleProperty).addAttributes(prevAttributes);
-				prevAttributes = null;
-			} else {
-				simpleProperty = new SimpleProperty(valueFromStack, this.currentTagValue);
-			}
+   public Property<?> getModel() {
+      return this.currentProperty;
+   }
 
-			this.currentProperty = references.peek();
+   @Override
+   public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
 
-			// last one should be a simple property
-			if (this.currentProperty == null) {
-				this.currentProperty = simpleProperty;
-			} else if (this.currentProperty instanceof ComplexProperty) {
-				((ComplexProperty) this.currentProperty).addProperty(simpleProperty);
-			}
-			stack.pop();
-		}
+      String valueFromStack = !stack.isEmpty()
+            ? stack.peek()
+            : null;
 
-		if (!complexTypes.isEmpty() && complexTypes.peek().equals(qName)) {
-			if (references.size() == 1) {
-				this.currentProperty = references.peek();
-			}
-			complexTypes.pop();
-			references.pop();
-		}
-	}
+      if (valueFromStack == null) {
+         // This must be the root element.
+         stack.push(qName);
+      } else {
+         // Change in the level.
+         if (!qName.equals(valueFromStack)) {
+            Property<?> parent = null;
+            if (!references.isEmpty()) {
+               parent = references.peek();
+            }
+            this.currentProperty = new ComplexProperty(valueFromStack);
+            if (prevAttributes != null) {
+               ((ComplexProperty) this.currentProperty).addProperties(prevAttributes);
+               prevAttributes = null;
+            }
+            references.push(currentProperty);
+            // Link the new complex type with the parent if any exists.
+            if (parent != null) {
+               ((ComplexProperty) parent).addProperty(this.currentProperty);
+            }
+            // remove the current tag that is in temp. stack and push it to
+            // the complex types stack.
+            stack.pop();
+            complexTypes.push(valueFromStack);
 
-	@Override
-	public void characters(char[] ch, int start, int length) throws SAXException {
-		this.currentTagValue = new String(ch, start, length).trim();
-	}
+            stack.push(qName);
+         }
+      }
 
-	public Property<?> getModel() {
-		return this.currentProperty;
-	}
+      if (attributes != null) {
+         int count = attributes.getLength();
+         if (count > 0) {
+            prevAttributes = new ArrayList<Property<?>>();
+            for (int i = 0; i < count; ++i) {
+               String attrName = attributes.getQName(i);
+               String attrValue = attributes.getValue(i);
+               prevAttributes.add(new SimpleProperty(attrName, attrValue));
+            }
+         }
+      }
+   }
 
 }

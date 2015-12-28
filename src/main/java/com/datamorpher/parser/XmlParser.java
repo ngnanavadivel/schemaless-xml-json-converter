@@ -13,25 +13,25 @@ import com.datamorpher.util.ExceptionUtil;
 
 public class XmlParser implements Parser {
 
-	private static final Logger logger = LoggerFactory.getLogger(XmlParser.class);
+   private static final Logger logger = LoggerFactory.getLogger(XmlParser.class);
 
-	public Property<?> parse(InputSource source) throws ParserException {
-		logger.info("Started parsing XML content.");
-		Property<?> model = null;
-		if (source == null) {
-			throw new IllegalArgumentException("Argument 'source' is null.");
-		}
-		try {
-			SAXParserFactory factory = SAXParserFactory.newInstance();
-			SAXParser saxparser = factory.newSAXParser();
-			XmlHandler handler = new XmlHandler();
-			saxparser.parse(source, handler);
-			logger.info("Parsing Completed.");
-			model = handler.getModel();
-		} catch (Throwable t) {
-			ExceptionUtil.wrapAndThrowAsParserException(t);
-		}
-		return model;
-	}
+   public Property<?> parse(InputSource source) throws ParserException {
+      logger.info("Started parsing XML content.");
+      Property<?> model = null;
+      if (source == null) {
+         throw new IllegalArgumentException("Argument 'source' is null.");
+      }
+      try {
+         SAXParserFactory factory = SAXParserFactory.newInstance();
+         SAXParser saxparser = factory.newSAXParser();
+         XmlHandler handler = new XmlHandler();
+         saxparser.parse(source, handler);
+         logger.info("Parsing Completed.");
+         model = handler.getModel();
+      } catch (Throwable t) {
+         ExceptionUtil.wrapAndThrowAsParserException(t);
+      }
+      return model;
+   }
 
 }
