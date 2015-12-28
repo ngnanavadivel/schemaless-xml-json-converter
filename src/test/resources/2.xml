@@ -1,0 +1,14 @@
+<books>
+	<book>
+		<name>I bet, you won't buy this book!</name>
+		<price>$35.10</price>
+	</book>
+	<book>
+		<name>Comics - Agents of Shield!</name>
+		<price>$15.10</price>
+	</book>
+	<book>
+		<name>God  of small stuff</name>
+		<price>$75.10</price>
+	</book>
+</books>

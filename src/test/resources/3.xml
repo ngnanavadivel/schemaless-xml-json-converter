@@ -1,0 +1,87 @@
+<employees>
+	<emp ssn="123-456-7788">
+		<firstName>Nataraj</firstName>
+		<lastName>Gnanavadivel</lastName>
+		<contacts>
+			<contact type="office">
+				<phone
+					type="mobile"
+					gsm="true">470.338.6277</phone>
+				<address>
+					<line1>175 M Centre St</line1>
+					<line2>APT 1305</line2>
+					<city>Quincy</city>
+					<state>MA</state>
+					<zip>02169</zip>
+				</address>
+			</contact>
+			<contact type="residence">
+				<phone type="landline">678.704.5753</phone>
+				<address>
+					<line1>51 Miller Stile Rd</line1>
+					<line2>Unit 28</line2>
+					<city>Quincy</city>
+					<state>MA</state>
+					<zip>02169</zip>
+				</address>
+			</contact>
+		</contacts>
+	</emp>
+	<emp ssn="111-222-3344">
+		<firstName>Roshan</firstName>
+		<lastName>Nataraj</lastName>
+		<contacts>
+			<contact type="residence">
+				<phone
+					type="mobile"
+					gsm="true">333.338.6277</phone>
+				<address>
+					<line1>175 M Centre St</line1>
+					<line2>APT 1305</line2>
+					<city>Quincy</city>
+					<state>MA</state>
+					<zip>02169</zip>
+				</address>
+			</contact>
+			<contact type="office">
+				<phone type="landline">777.704.5753</phone>
+				<address>
+					<line1>51 Miller Stile Rd</line1>
+					<line2>Unit 28</line2>
+					<city>Quincy</city>
+					<state>MA</state>
+					<zip>02169</zip>
+				</address>
+			</contact>
+		</contacts>
+	</emp>
+	<emp ssn="789-654-2211">
+		<firstName>Shreenidhy</firstName>
+		<lastName>Nataraj</lastName>
+		<contacts>
+			<contact type="residence">
+				<phone
+					type="mobile"
+					gsm="true">777.888.9999</phone>
+				<address>
+					<line1>175 M Centre St</line1>
+					<line2>APT 1305</line2>
+					<city>Quincy</city>
+					<state>MA</state>
+					<zip>02169</zip>
+				</address>
+			</contact>
+			<contact type="office">
+				<phone type="landline">111.222.3333</phone>
+				<address>
+					<line1>51 Miller Stile Rd</line1>
+					<line2>Unit 28</line2>
+					<city>Quincy</city>
+					<state>MA</state>
+					<zip>02169</zip>
+				</address>
+			</contact>
+		</contacts>
+	</emp>
+</employees>
+

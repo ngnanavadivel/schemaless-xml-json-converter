@@ -1,0 +1,354 @@
+{
+	"DEAL": {
+		"xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+		"LOANS": {
+			"COLLATERALS": [{
+				"SUBJECT_PROPERTY": {
+					"ADDRESS": {
+						"AddressLine1Text": "811 Se 16th Ave",
+						"AddressLine2Text": "",
+						"AddressLine3Text": "",
+						"AddressType": "CURRENT",
+						"CityName": "Austin",
+						"CountryCode": "",
+						"CountyCode": "MOWE",
+						"PlusFourZipCode": "",
+						"PostalCode": "55912",
+						"StateCode": "MN",
+						"AddressVerifiedIndicator": "false"
+					},
+					"PROPERTY_DETAIL": {
+						"PropertyCurrentOccupancyType": "A",
+						"PropertyType": "SF"
+					},
+					"PROPERTY_VALUATIONS": [{
+						[{
+							"AppraisalIdentifier": "14",
+							"PropertyValuationAmount": "65000.0",
+							"PropertyValuationEffectiveDate": "10/06/2015",
+							"PropertyValuationMethodType": "B"
+						}]
+					},
+					{
+						[{
+							"AppraisalIdentifier": "13",
+							"PropertyValuationAmount": "74000.0",
+							"PropertyValuationEffectiveDate": "10/20/2010",
+							"PropertyValuationMethodType": "B"
+						}]
+					},
+					{
+						[{
+							"AppraisalIdentifier": "12",
+							"PropertyValuationAmount": "71000.0",
+							"PropertyValuationEffectiveDate": "06/09/2010",
+							"PropertyValuationMethodType": "B"
+						}]
+					},
+					{
+						[{
+							"AppraisalIdentifier": "11",
+							"PropertyValuationAmount": "66000.0",
+							"PropertyValuationEffectiveDate": "11/09/2009",
+							"PropertyValuationMethodType": "B"
+						}]
+					},
+					{
+						[{
+							"AppraisalIdentifier": "10",
+							"PropertyValuationAmount": "53500.0",
+							"PropertyValuationEffectiveDate": "05/28/2009",
+							"PropertyValuationMethodType": "B"
+						}]
+					},
+					{
+						[{
+							"AppraisalIdentifier": "9",
+							"PropertyValuationAmount": "67000.0",
+							"PropertyValuationEffectiveDate": "01/06/2009",
+							"PropertyValuationMethodType": "B"
+						}]
+					},
+					{
+						[{
+							"AppraisalIdentifier": "8",
+							"PropertyValuationAmount": "83000.0",
+							"PropertyValuationEffectiveDate": "07/30/2008",
+							"PropertyValuationMethodType": "B"
+						}]
+					},
+					{
+						[{
+							"AppraisalIdentifier": "7",
+							"PropertyValuationAmount": "66500.0",
+							"PropertyValuationEffectiveDate": "02/06/2008",
+							"PropertyValuationMethodType": "B"
+						}]
+					},
+					{
+						[{
+							"AppraisalIdentifier": "6",
+							"PropertyValuationAmount": "78000.0",
+							"PropertyValuationEffectiveDate": "01/30/2007",
+							"PropertyValuationMethodType": "B"
+						}]
+					},
+					{
+						[{
+							"AppraisalIdentifier": "5",
+							"PropertyValuationAmount": "72000.0",
+							"PropertyValuationEffectiveDate": "03/07/2002",
+							"PropertyValuationMethodType": ""
+						}]
+					},
+					{
+						[{
+							"AppraisalIdentifier": "4",
+							"PropertyValuationAmount": "72000.0",
+							"PropertyValuationEffectiveDate": "03/07/2002",
+							"PropertyValuationMethodType": "B"
+						}]
+					},
+					{
+						[{
+							"AppraisalIdentifier": "3",
+							"PropertyValuationAmount": "71100.0",
+							"PropertyValuationEffectiveDate": "05/04/2001",
+							"PropertyValuationMethodType": ""
+						}]
+					},
+					{
+						[{
+							"AppraisalIdentifier": "2",
+							"PropertyValuationAmount": "71100.0",
+							"PropertyValuationEffectiveDate": "04/28/2001",
+							"PropertyValuationMethodType": ""
+						}]
+					},
+					{
+						[{
+							"AppraisalIdentifier": "1",
+							"PropertyValuationAmount": "60435.0",
+							"PropertyValuationEffectiveDate": "04/28/2001",
+							"PropertyValuationMethodType": ""
+						}]
+					}]
+				},
+				"COLLATERAL_DETAIL": [{
+					"1st"
+				}]
+			}],
+			"LOAN": {
+				"FORECLOSURES": {
+					"FORECLOSURE_DETAIL": {
+						"ActiveForeclosureIndicator": "N",
+						"ForeclosureCaseIdentifier": "1",
+						"ForeclosureMethodType": "Non-Judicial",
+						"ForeclosureStatusType": "C",
+						"ForeclosureSaleConfirmedDate": "",
+						"ForeclosureSoldTo": "Ocwen",
+						"ForeclosureFileReceivedDate": "02/14/2002",
+						"ForeclosureStartDate": "02/14/2002"
+					},
+					"FORECLOSURE_DELAYS": ""
+				},
+				"INVESTOR_LOAN_INFORMATION": [{
+					"2139"
+				}],
+				"MI_DATA": [{
+					[{
+						[{
+							"FullName": "",
+							"GlobalLegalEntityIdentifier": "",
+							"LegalEntityType": "MortgageInsurer"
+						}]
+					}]
+				}],
+				"LOAN_IDENTIFIERS": [{
+					"LoanIdentifier": "100046333",
+					"LoanIdentifierType": "ServicerLoan",
+					"LoanIdentifierTypeOtherDescription": "",
+					"PreviousLoanIdentifier": "0000478623",
+					"LoanIdentifierChangeDate": ""
+				},
+				{
+					"LoanIdentifier": "0478623",
+					"LoanIdentifierType": "InvestorLoan",
+					"LoanIdentifierTypeOtherDescription": "",
+					"PreviousLoanIdentifier": "",
+					"LoanIdentifierChangeDate": ""
+				}],
+				"PAYMENT": {
+					"PAYMENT_SUMMARY": {
+						"InterestPaidThroughDate": "01/01/2015",
+						"LastPaymentReceivedDate": "09/30/2014",
+						"NextPaymentDueDate": "02/25/2015",
+						"UPBAmount": "99999999.99"
+					},
+					"PAYMENT_RULE": [{
+						"568.7"
+					}]
+				},
+				"TERMS_OF_LOAN": {
+					"BaseLoanAmount": "60435.0",
+					"LienPriorityType": "1st",
+					"MortgageType": "UC"
+				},
+				"WORKOUTS": [{
+					[{
+						[{
+							"SolicitationDate": "02/06/2015",
+							"SolicitationMethodType": "Letter",
+							"SolicitationMethodTypeOtherDescription": "Letter",
+							"SolicitationPrintDate": "02/06/2015",
+							"SolicitationExpiryDate": "03/15/2015",
+							"WorkoutSolicitationProgramIdentifier": "DEMAND"
+						}]
+					}]
+				}],
+				"CLOSING_INFORMATION": [{
+					"ClosingDate": "08/01/2001",
+					"LoanScheduledClosingDate": ""
+				}],
+				"LATE_CHARGE": [{
+					[{
+						"LateChargeLoanPaymentAmount": "369.72",
+						"UncollectedLateChargeBalanceAmount": "369.72"
+					}]
+				}],
+				"AMORTIZATION": [{
+					[{
+						"1"
+					}]
+				}],
+				"ORIGINATION_SYSTEMS": [{
+					[{
+						"08/05/2001"
+					}]
+				}],
+				"CODES": {
+					"REPORT_STATUS": [{
+						"90R,AFC,APTR,DF,FROZ,HOSL,LNAC,RWDA,SPOC"
+					}],
+					"STATUS_CONDITIONS": [{
+						"DMEX,FC,FP2,LS,np,RSCH(1),RE"
+					}]
+				}
+			},
+			"PARTIES": [{
+				"INDIVIDUAL": {
+					"CONTACT_POINTS": [{
+						"CONTACT_POINT_EMAIL": [{
+							"dispatch@altisource.com"
+						}],
+						"CONTACT_POINT_TELEPHONE": {
+							"ContactPointFaxExtensionValue": "",
+							"ContactPointFaxValue": "",
+							"ContactPointTelephoneExtensionValue": "",
+							"ContactPointTelephoneValue": "(106)347-2049"
+						},
+						"OTHER_CONTACT_POINT": {
+							"ContactPointOtherValue": "",
+							"ContactPointOtherValueDescription": ""
+						},
+						"CONTACT_POINT_DETAIL": {
+							"ContactPointRoleType": "HOME",
+							"ContactPointRoleTypeOtherDescription": "",
+							"RequestNoContactIndicator": "false"
+						}
+					},
+					{
+						"CONTACT_POINT_EMAIL": [{
+							"dispatch@altisource.com"
+						}],
+						"CONTACT_POINT_TELEPHONE": {
+							"ContactPointFaxExtensionValue": "",
+							"ContactPointFaxValue": "",
+							"ContactPointTelephoneExtensionValue": "",
+							"ContactPointTelephoneValue": "(154)861-3186"
+						},
+						"OTHER_CONTACT_POINT": {
+							"ContactPointOtherValue": "",
+							"ContactPointOtherValueDescription": ""
+						},
+						"CONTACT_POINT_DETAIL": {
+							"ContactPointRoleType": "WORK",
+							"ContactPointRoleTypeOtherDescription": "",
+							"RequestNoContactIndicator": "false"
+						}
+					}],
+					"NAME": {
+						"EducationalAchievementsDescription": "",
+						"FirstName": "John",
+						"FullName": "John Doe",
+						"FunctionalTitleDescription": "",
+						"IndividualTitleDescription": "",
+						"LastName": "Doe",
+						"MiddleName": "",
+						"PrefixName": "",
+						"SuffixName": ""
+					}
+				},
+				"ADDRESSES": [{
+					"AddressLine1Text": "785 Grand Ave",
+					"AddressLine2Text": "",
+					"AddressLine3Text": "",
+					"AddressType": "Mailing",
+					"CityName": "Austin",
+					"CountryCode": "",
+					"CountyCode": "",
+					"PlusFourZipCode": "55912",
+					"PostalCode": "55912",
+					"StateCode": "MN",
+					"AddressVerifiedIndicator": "true"
+				}],
+				"TAXPAYER_IDENTIFIERS": [{
+					"TaxpayerIdentifierType": "SocialSecurityNumber",
+					"TaxpayerIdentifierValue": "325-96-2452"
+				}],
+				"ROLES": [{
+					"BORROWER": {
+						"SequenceNumber": "1",
+						"BORROWER_DETAIL": {
+							"BorrowerSameAsOccupantIndicator": "false",
+							"BorrowerIsPersonIndicator": "false",
+							"BorrowerCharacteristicTypeOtherDescription": "Primary",
+							"BorrowerClassificationType": "PRIMARY"
+						},
+						"BANKRUPTCIES": [{
+							[{
+								"BankruptcyCaseIdentifier": "11-30093",
+								"BankruptcyChapterType": "Other",
+								"BankruptcyChapterTypeOtherDescription": "",
+								"BankruptcyDistrictName": "ALL",
+								"BankruptcyType": "",
+								"BankruptcyFiledDt": "01/07/2011",
+								"ActiveBankruptcyIndicator": "true",
+								"BankruptcyCaseFiled": "N",
+								"BankruptcyActivator": "N"
+							}]
+						}]
+					},
+					"ROLE_DETAIL": {
+						"PartyRoleType": "Borrower",
+						"PartyRoleTypeOtherDescription": "Borrower"
+					}
+				}]
+			},
+			{
+				[{
+					[{
+						"REGULATORY_AGENCY": {
+							"RegulatoryAgencyType": "OTHER",
+							"RegulatoryAgencyTypeOtherDescription": "OTHER"
+						},
+						"ROLE_DETAIL": {
+							"PartyRoleType": "RegulatoryAgency",
+							"PartyRoleTypeOtherDescription": "RegulatoryAgency"
+						}
+					}]
+				}]
+			}]
+		}
+	}
+}
